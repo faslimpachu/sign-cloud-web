@@ -1,0 +1,93 @@
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+    /* Bootstrap Icons */
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css");
+
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Ensure no horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Container width adjustments for responsiveness */
+    .container-xl {
+        max-width: 1200px;
+    }
+
+    .span1 {
+        background-color: #EA9639;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    .btn-contact {
+        background-color: #fff;
+        color: black;
+    }
+
+    .bg-dark {
+        background-color: #2D3A3A;
+
+
+    }
+    .img-gallery {
+        height: 200px; /* Set desired height */
+        object-fit: cover; /* Ensure images are cropped proportionally */
+        width: 100%; /* Make the image fill the card width */
+    }
+    .img-gallery:hover {
+        transform: scale(1.09);
+        transition: 0.5s;
+        
+       
+        
+    }
+
+
+    .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #25D366;
+            color: #fff;
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+       
+
+    .parallax {
+            background: url('/img/ad-booth.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+           
+
+          
+        }
+
+       
+
+
+

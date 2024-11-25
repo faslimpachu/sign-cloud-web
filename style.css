@@ -10,6 +10,7 @@
     /* Ensure no horizontal overflow */
     body {
         overflow-x: hidden;
+        
     }
 
     /* Container width adjustments for responsiveness */
@@ -73,7 +74,7 @@
        
 
     .parallax {
-            background: url('img/ad-booth.jpg') no-repeat center center/cover;
+            background: url('img/booth5.jpg') no-repeat center center/cover;
             height: 400px;
             display: flex;
             justify-content: center;
@@ -82,12 +83,73 @@
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
+          
            
 
           
         }
 
+
+        .faq-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .faq-header h2 {
+            font-weight: bold;
+            color: #2D3A3A;
+        }
+        .faq-header p {
+            color: #777;
+        }
+        .accordion-button {
+            background-color: #2D3A3A;
+            color: white;
+            border: none;
+            /* font-weight: bold; */
+            font-size: 1rem;
+            padding: 1rem;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #EA9639;
+            color: white;
+        }
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        .accordion-body {
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+        }
+        .faq-footer {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .faq-footer a {
+            color: #EA9639;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .faq-footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
        
-
-
-

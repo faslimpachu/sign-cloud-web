@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignCloud/Gallery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 
+<style>
+    .lightbox {
+        display: block;
+        position: relative;
+    }
+
+    /* Lightbox overlay */
+    .lightbox-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+    }
+
+    .lightbox-overlay img {
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .lightbox-overlay.active {
+        display: block;
+    }
+
+    /* Close button */
+    .lightbox-overlay .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
 
 <body>
 
 
-    
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-default px-0 py-3">
         <div class="container-xl max-w-screen-xl">
             <!-- Logo -->
             <a class="navbar-brand" href="index.html">
-                <img src="img/Logo_Sign cloud.png" class="h-8" alt="logo">
+                <img src="img/Logo_Sign cloud.png" class="h-8" alt=" SignCloud logo">
             </a>
             <!-- Navbar toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -60,150 +107,528 @@
 
 
 
-       <!-- Parallax Section -->
-       <div class="parallax" data-aos="zoom-in">
-     
+    <!-- Parallax Section -->
+    <div class="parallax" data-aos="zoom-in">
+
     </div>
-    
 
-<div class="container text-center" data-aos="zoom-out">
-    <!-- <h2 class="text-center mb-10">Our Gallery</h2> -->
-    <h1 class="mb-5 mt-10">See Our Work in Action</h1>
-    <p class="mb-16" style="color: black;">
-    Discover the creativity and precision behind every project we undertake. From eye-catching exhibition booths to detailed CNC woodwork, vibrant prints, and custom acrylic designs, our portfolio showcases the diversity and quality of our services.
-</p>
-    
-</div>
 
- <!-- Sticky WhatsApp Icon -->
- <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service.
- " 
- target="_blank" 
- class="whatsapp-icon" 
- aria-label="Chat with us on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+    <div class="container text-center" data-aos="zoom-out">
+        <!-- <h2 class="text-center mb-10">Our Gallery</h2> -->
+        <h1 class="mb-5 mt-10">See Our Work in Action</h1>
+        <p class="mb-16" style="color: black;">
+            Discover the creativity and precision behind every project we undertake. From eye-catching exhibition booths
+            to detailed CNC woodwork, vibrant prints, and custom acrylic designs, our portfolio showcases the diversity
+            and quality of our services.
+        </p>
+
+    </div>
+
+    <!-- Sticky WhatsApp Icon -->
+    <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service.
+ " target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <div class="container my-5" data-aos="zoom-in">
-        
+
         <div class="row g-4">
             <!-- Repeat this column structure for each image -->
             <!-- Use a loop or server-side logic to dynamically generate this -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/6.jpg" class="card-img-top img-fluid img-gallery" alt="Image 1">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/6.jpg" class="lightbox">
+                            <img src="img/referance images/6.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/7.jpg" class="card-img-top img-fluid img-gallery" alt="Image 2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/1.jpg" class="lightbox">
+                            <img src="img/referance images/new/1.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/8.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/2.jpg" class="lightbox">
+                            <img src="img/referance images/new/2.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/9.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/5.jpg" class="lightbox">
+                            <img src="img/referance images/new/5.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/6.jpg" class="lightbox">
+                            <img src="img/referance images/new/6.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/7.jpg" class="lightbox">
+                            <img src="img/referance images/new/7.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/10.jpg" class="lightbox">
+                            <img src="img/referance images/new/10.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/10.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/17.jpg" class="lightbox">
+                            <img src="img/referance images/new/17.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/16.jpg" class="lightbox">
+                            <img src="img/referance images/new/16.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/11.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/12.jpg" class="lightbox">
+                            <img src="img/referance images/new/12.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/12.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/18.jpg" class="lightbox">
+                            <img src="img/referance images/new/18.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/13.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/13.jpg" class="lightbox">
+                            <img src="img/referance images/new/13.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/14.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/10.1.jpg" class="lightbox">
+                            <img src="img/referance images/new/10.1.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/3.jpg" class="lightbox">
+                            <img src="img/referance images/new/3.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/4.jpg" class="lightbox">
+                            <img src="img/referance images/new/4.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/8.jpg" class="lightbox">
+                            <img src="img/referance images/new/8.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/9.jpg" class="lightbox">
+                            <img src="img/referance images/new/9.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/11.jpg" class="lightbox">
+                            <img src="img/referance images/new/11.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/14.jpg" class="lightbox">
+                            <img src="img/referance images/new/14.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/new/15.jpg" class="lightbox">
+                            <img src="img/referance images/new/15.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/8.jpg" class="lightbox">
+                            <img src="img/referance images/8.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/10.jpg" class="lightbox">
+                            <img src="img/referance images/10.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/15.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/1.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/16.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/11.jpg" class="lightbox">
+                            <img src="img/referance images/11.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/17.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/18.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/19.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/12.jpg" class="lightbox">
+                            <img src="img/referance images/12.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/20.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/21.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/22.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/13.jpg" class="lightbox">
+                            <img src="img/referance images/13.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/23.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/14.jpg" class="lightbox">
+                            <img src="img/referance images/14.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/24.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/25.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
-                </div>
-            </div> <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/26.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+            </div>
+           
+            
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/17.jpg" class="lightbox">
+                            <img src="img/referance images/17.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/27.jpg" class="card-img-top img-fluid img-gallery" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/18.jpg" class="lightbox">
+                            <img src="img/referance images/18.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card">
-                    <img src="img/referance images/5.jpg" class="card-img-top img-fluid img-gallery mb-20" alt="Image 3">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/19.jpg" class="lightbox">
+                            <img src="img/referance images/19.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
                 </div>
             </div>
-        
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/20.jpg" class="lightbox">
+                            <img src="img/referance images/20.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/21.jpg" class="lightbox">
+                            <img src="img/referance images/21.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/22.jpg" class="lightbox">
+                            <img src="img/referance images/22.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/23.jpg" class="lightbox">
+                            <img src="img/referance images/23.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/24.jpg" class="lightbox">
+                            <img src="img/referance images/24.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/26.jpg" class="lightbox">
+                            <img src="img/referance images/26.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card">
+                        <a href="img/referance images/27.jpg" class="lightbox">
+                            <img src="img/referance images/27.jpg" class="card-img-top img-fluid img-gallery"
+                                alt="Image 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+
         </div>
     </div>
 
 
-    
+
+    <div class="faq-container mt-16" id="FAQ">
+        <div class="faq-header">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <p>Your most common questions answered below!</p>
+        </div>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. What services do you offer?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We specialize in exhibition booth design and branding, CNC woodwork, acrylic cutting, DTF and UV printing, large-format printing, and sticker branding.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Can you customize services to fit my brand’s needs?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! We tailor every project to meet your specific branding and advertising requirements.
+                    </div>
+                </div>
+            </div>
+            <!-- Additional FAQs -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. How long does it take to complete a project?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Timelines vary based on the complexity of the project. We’ll provide an estimated delivery time after discussing your requirements.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. Do you offer installation services for exhibition booths?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we handle everything from design to installation to ensure your booth is ready to impress.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        5. What materials do you work with for CNC and acrylic projects?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We work with a variety of materials, including wood, acrylic, and more, to deliver precision-crafted designs.
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        6.  Can you handle large-scale printing projects?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, our large-format printing services are ideal for banners, posters, and backdrops of any size.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        7. How can I place an order or get a quote?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can contact us through our website, email, or phone. Share your project details, and we’ll provide a customized quote.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-footer">
+            <p>Still have questions? <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service.">Feel free to reach out to us directly</a>. We’re happy to help!</p>
+        </div>
+    </div>
+
+
+
+
 
 
     <div class="container my-5" id="contact" data-aos="zoom-in-up">
@@ -254,7 +679,7 @@
 
 
     <hr class="mt-16 mb-16 border-black " />
-    <footer class="pt-10 bg-surface-white border-footer" data-aos="slide-right">
+    <footer class="pt-10 bg-surface-white border-footer" >
         <div class="container max-w-screen-xl">
             <!-- Call to action -->
 
@@ -325,8 +750,33 @@
             duration: 1000, // Animation duration in milliseconds
             once: true,     // Whether animation should happen only once
         });
+
+
+        document.querySelectorAll('.lightbox').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const overlay = document.createElement('div');
+                overlay.classList.add('lightbox-overlay');
+                overlay.innerHTML = `
+                <img src="${link.href}" alt="Lightbox Image">
+                <span class="close">&times;</span>
+            `;
+                document.body.appendChild(overlay);
+                overlay.classList.add('active');
+
+                // Close functionality
+                overlay.querySelector('.close').addEventListener('click', () => {
+                    overlay.remove();
+                });
+
+                // Close on click outside the image
+                overlay.addEventListener('click', e => {
+                    if (e.target === overlay) overlay.remove();
+                });
+            });
+        });
     </script>
-    
+
 
 
 </body>

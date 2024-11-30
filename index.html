@@ -147,7 +147,7 @@
         }
 
         /* From Uiverse.io by adamgiebl */
-        .hero-section {
+        /* .hero-section {
             width: 100%;
             height: 100%;
             --color: rgba(114, 114, 114, 0.3);
@@ -155,7 +155,57 @@
             background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
                 linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
             background-size: 25px 25px;
-        }
+        } */
+
+        .hero-section {
+    width: 100%;
+    /* height:100vh; Full viewport height */
+    position: relative;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 450px; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.span1 {
+    background-color: #EA9639;
+    padding: 8px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.btn-contact {
+    background-color: #fff;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #EA9639;
+    color: white;
+}
+
+
     </style>
 
 
@@ -170,7 +220,7 @@
         <div class="container-xl max-w-screen-xl">
             <!-- Logo -->
             <a class="navbar-brand" href="index.html">
-                <img src="img/Logo_Sign cloud.png" class="h-8" alt="SignCloud logo">
+                <img src="img/Logo_Sign cloud.png" class="h-14" alt="SignCloud logo">
             </a>
             <!-- Navbar toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -208,34 +258,89 @@
 
 
     <section class="hero-section">
-        <div class="pt-10 pt-md-24   " data-aos="fade-up">
-            <div class="container-xl max-w-screen-xl">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-10 col-xl-8 text-md-center">
-                        <div>
-                            <h1 class="ls-tight font-bolder display-3 text-white mb-7">
-                                Grow Your <span class="d-inline-block py-1 span1 ">Brand With Us</span>
-                            </h1>
-                            <p class="lead text-white text-opacity-80 mb-10" data-aos="zoom-in">
-                                At SignCloud, we turn ideas into reality. With expertise in Custom-Exhibition Booth
-                                Making, CNC woodwork, acrylic cutting,
-                                large-format printing,
-                                and more, we help your brand leave a lasting impression. Let’s create something
-                                remarkable
-                                together!
-                                </h1>
-                            <div class="mx-sm-n2 mb-10">
-
-                                <a href="#service" class="btn btn-contact btn-lg  my-2 mx-sm-2 w-full w-sm-auto">
-                                    Explore Our Service<span class="ms-2"></span>
-                                </a>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('img/carousal1.jpg');">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center ">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7  pt-10">
+                                        Grow Your <span class="d-inline-block py-1 span1">Brand With Us</span>
+                                    </h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">
+                                        At SignCloud, we bring ideas to life with expert branding, 
+                                        exhibition booths, and printing services. Let's create something great!
+                                    </p>
+                                   <div class="btno ">
+                                    <a href="#service" class="btn btn-contact btn-lg my-2 mx-sm-2 ">
+                                        Explore Our Services
+                                    </a>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('img/carousal2.jpg');">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7">
+                                        Turn Ideas <span class="d-inline-block py-1 span1">Into Reality</span>
+                                    </h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">
+                                        At SignCloud, we specialize in delivering impactful solutions, from booth making
+                                        to custom printing and branding.
+                                    </p>
+                                    <a href="#service" class="btn btn-contact btn-lg my-2 mx-sm-2">
+                                        Get Started Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('img/Acrylic\ Cutting\ and\ Box\ Production.jpg');">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7">
+                                        Boost Your <span class="d-inline-block py-1 span1">Business </span>
+                                    </h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">
+                                        From stunning visuals to seamless branding solutions, SignCloud ensures your business stands out.
+                                        Let's craft a future where your brand speaks volumes.
+                                    </p>
+                                    <a href="#contact" class="btn btn-contact btn-lg my-2 mx-sm-2">
+                                        Contact Us Today
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+    
+            <!-- Carousel Controls -->
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+        </div>
     </section>
+    
     </div>
 
 
@@ -345,10 +450,12 @@
                                 About Us
                             </h5>
                             <h2 class="mb-3">Who We Are</h2>
-                            <p class="lead fs-4  mb-3">At Sign Cloud, we are a team of passionate professionals dedicated
-                                to bringing your ideas to life. Specializing in exhibition booth design, cutting-edge
-                                fabrication, and high-quality printing services, we work closely with our
-                                clients to deliver innovative and impactful solutions that make their brands stand out.
+                            <p class="text-lg mb-3">At Sign Cloud, we are more than just a signage company –
+                                 we are your creative partners. Specializing in exhibition booths, custom fabrication, 
+                                 and high-quality printing, we work closely with each client to deliver tailored solutions 
+                                 that meet their unique needs. With years of experience in the industry, we combine technical 
+                                 expertise, creativity, and top-tier materials to create visually striking, functional products that leave a lasting impression.
+                                 Whether it’s a trade show, retail branding, or corporate event, we are here to make your brand shine.
                             </p>
 
 
@@ -357,6 +464,8 @@
                 </div>
             </div>
     </section>
+
+    
 
 
     <div class=" pb-24 bg-surface-secondary pt-10" id="service">
@@ -371,15 +480,13 @@
                         </h5>
                         <!-- Title -->
                         <h1 class="ls-tight font-bolder mb-4">
-                            Custom Advertising Solutions for Your Brand
+                            What We Specialize In
                         </h1>
                         <!-- Text -->
                         <p class="lead text-muted mb-10">
-                            Our services are designed to help your brand make a bold statement. Whether it's creating
-                            eye-catching exhibition booths, precision CNC and laser work, or vibrant printing solutions,
-                            we
-                            deliver quality and creativity that brings your brand to life. Let us turn your vision into
-                            reality with our expert craftsmanship and innovative approach.
+                            At Sign Cloud, we take pride in offering a wide range of specialized services to meet
+                             all of your branding and signage needs. Our team of experts combines cutting-edge technology with 
+                            years of experience to deliver high-quality, custom solutions that will help your brand stand out. 
                         </p>
                     </div>
                     <!-- Right Side Image -->
@@ -543,7 +650,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 1</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">Exhibition Booth Making and Branding</h1>
                         <p class="lead text-muted">
-                            Custom-designed booths and branding solutions to make your exhibition stand out.
+                            We design and build custom exhibition booths that are both functional and visually striking, ensuring your brand makes a 
+                            strong impact at every event. From concept to execution, we handle every detail to help you create a memorable presence.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -602,7 +710,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 2</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">CNC Router and Laser Work</h1>
                         <p class="lead text-muted">
-                            High-precision CNC router and laser cutting for wood, metal, and other materials.
+                            Our advanced CNC router and laser cutting services allow us to craft intricate, precise designs in a variety
+                             of materials. Whether it's for custom signage, displays, or décor, we offer clean, sharp, and professional results.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -663,7 +772,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">Acrylic Cutting and Box Production</h1>
                         <p class="lead text-muted">
-                            Professional acrylic cutting services and custom box production for various uses.
+                            We provide custom acrylic cutting and box production services that bring your creative ideas to life. From retail displays
+                             to packaging, our acrylic solutions are durable, stylish, and tailored to your specifications.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -725,8 +835,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">DTF & UV Flatbed Printing</h1>
                         <p class="lead text-muted">
-                            Our direct-to-film (DTF) and UV flatbed printing offers vibrant, high-quality designs on a
-                            wide range of materials.
+                            Our Direct-to-Film (DTF) and UV flatbed printing services allow us to print vibrant, high-quality designs directly onto a variety of surfaces. Whether for
+                             promotional items, signage, or custom merchandise, we ensure your designs look sharp and professional.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -788,8 +898,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">Large Format Printing</h1>
                         <p class="lead text-muted">
-                            Our large format printing brings your ideas to life with precision, perfect for banners,
-                            posters, and wall graphics.
+                            When you need high-impact visuals, our large format printing services have got you covered. From banners and posters to trade show
+                             graphics and wall wraps, we produce stunning prints that grab attention and communicate your message clearly.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -852,8 +962,8 @@
                         <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
                         <h1 class="ls-tight font-bolder mb-5">Sticker Branding</h1>
                         <p class="lead text-muted">
-                            Get creative with custom stickers perfect for packaging, branding, and promotions that grab
-                            attention.
+                            Our custom sticker branding services provide a versatile and cost-effective way to promote your business. Whether it's for product packaging,
+                             vehicle decals, or promotional giveaways, our stickers are designed to last and make a statement.
                         </p>
                         <ul class="list-unstyled mt-4 mb-0">
                             <li class="py-2">
@@ -959,7 +1069,7 @@
 
     <!-- Explore More Button -->
     <div class="text-center mt-10 mb-16">
-        <a href="Gallery.html" class="btn btn-dark btn-lg  px-4">Explore More</a>
+        <a href="Gallery.html" class="btn btn-dark btn-lg  ">Explore More</a>
     </div>
     </div>
 

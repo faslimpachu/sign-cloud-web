@@ -30,4 +30,22 @@ link.addEventListener('click', event => {
 
 
 
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down - hide navbar
+        navbar.style.top = '-70px'; // Adjust height as per navbar height
+    } else {
+        // Scrolling up - show navbar
+        navbar.style.top = '0';
+    }
+    lastScrollTop = currentScroll;
+});
+
+
+
 

@@ -6,11 +6,40 @@
     html {
         scroll-behavior: smooth;
     }
+
+    :root {
+        --primary-color: #2D3A3A;
+            --secondary-color: #EA9639;
+            --transition-speed: 0.3s;
+            --thrd-color: #000;
+            --white-color:#fff;
+    }
     
     /* Ensure no horizontal overflow */
     body {
         overflow-x: hidden;
+       
         
+       
+       
+        
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+        transition: top 0.3s ease-in-out;
+        background-color: white;
+    }
+    
+    .milestone-bg{
+        
+    }
+
+    .main-content{
+        background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgb(31, 31, 33) 93.2% );
     }
 
     /* Container width adjustments for responsiveness */
@@ -34,18 +63,51 @@
 
 
     }
-    .img-gallery {
-        height: 200px; /* Set desired height */
-        object-fit: cover; /* Ensure images are cropped proportionally */
-        width: 100%; /* Make the image fill the card width */
-    }
-    .img-gallery:hover {
-        transform: scale(1.09);
-        transition: 0.5s;
-        
+   .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item .card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
        
-        
-    }
+        .img-gallery {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            transition: all 0.5s ease;
+        }
+
+        .img-gallery:hover {
+            transform: scale(1.1) rotate(3deg);
+            filter: brightness(1.2) contrast(1.1);
+        }
+
+        @keyframes borderAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Additional styling for explore button */
+       
+   
 
 
     .whatsapp-icon {
@@ -92,66 +154,358 @@
         }
 
 
-        .faq-container {
-            max-width: 900px;
-            margin: auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-        .faq-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .faq-header h2 {
-            font-weight: bold;
-            color: #2D3A3A;
-        }
-        .faq-header p {
-            color: #777;
-        }
-        .accordion-button {
-            background-color: #2D3A3A;
-            color: white;
-            border: none;
-            /* font-weight: bold; */
-            font-size: 1rem;
-            padding: 1rem;
-        }
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-        .accordion-button:not(.collapsed) {
-            background-color: #EA9639;
-            color: white;
-        }
-        .accordion-item {
-            border: none;
-            margin-bottom: 1rem;
-        }
-        .accordion-item:last-child {
-            margin-bottom: 0;
-        }
-        .accordion-body {
-            background-color: #f7f7f7;
-            border-radius: 10px;
-            padding: 1rem 1.5rem;
-        }
-        .faq-footer {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .faq-footer a {
-            color: #EA9639;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .faq-footer a:hover {
-            text-decoration: underline;
-        }
+
+
+
+.service-card-wrapper {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.service-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(74,108,247,0.1), 
+        rgba(106,90,205,0.1)
+    );
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 1;
+}
+
+.service-card-inner {
+    position: relative;
+    backface-visibility: hidden;
+    transition: transform var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+   background-color: white;
+}
+
+.service-card-front {
+    transform: rotateY(0deg);
+}
+
+.service-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, var(--primary-color), var(--thrd-color));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all var(--transition-speed) ease;
+}
+
+.service-card-wrapper:hover .service-card::before {
+    opacity: 1;
+}
+
+.service-card-wrapper:hover .service-card-inner {
+    transform: rotateY(180deg);
+}
+
+.service-card-wrapper:hover .service-card-back {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.icon-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 10px 25px rgba(74,108,247,0.3);
+}
+
+.icon-wrapper .bi {
+    font-size: 3rem;
+    color: white;
+    transition: transform var(--transition-speed) ease;
+}
+
+.service-card-wrapper:hover .icon-wrapper {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.service-card-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color var(--transition-speed) ease;
+}
+
+.service-card-text {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.btn-explore {
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-color));
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: all var(--transition-speed) ease;
+    /* box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3); */
+}
+
+.btn-explore:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(74,108,247,0.4);
+}
+
+.service-card-back h6 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.service-card-back p {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .service-card-wrapper:hover .service-card-inner {
+        transform: none;
+    }
+}
 
 
 
 
-       
+
+.lightbox {
+    display: block;
+    position: relative;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightbox-overlay.active {
+    display: block;
+}
+
+/* Close button */
+.lightbox-overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    position: relative;
+}
+
+/* .card img {
+    display: block;
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+
+} */
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.gallery-item:hover .card-overlay {
+    opacity: 1;
+}
+
+
+
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+.hero-section {
+    width: 100%;
+    height: 450;
+    /*Full viewport height */
+    position: relative;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 450px;
+    /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay for readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.span1 {
+    background-color: #EA9639;
+    padding: 8px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.btn-contact {
+    background-color: #fff;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #EA9639;
+    color: white;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title h5 {
+    color: #EA9639;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+
+    .card {
+        background: linear-gradient(145deg, #1e1e1e, #262626);
+        /* Add creative gradient */
+        border-radius: 15px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h5 {
+        color: #EA9639;
+    }
+
+
+
+
+    .row .col-md-4 {
+        padding: 20px;
+    }
+    

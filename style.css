@@ -1,175 +1,149 @@
 @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css);
 
-    /* Bootstrap Icons */
-    @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css");
+html {
+    scroll-behavior: smooth
+}
 
-    html {
-        scroll-behavior: smooth;
+:root {
+    --primary-color: #2D3A3A;
+    --secondary-color: #EA9639;
+    --transition-speed: 0.3s;
+    --thrd-color: #000;
+    --white-color: #fff
+}
+
+
+
+body {
+    overflow-x: hidden;
+
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    transition: top 0.3s ease-in-out;
+    background-color: #fff
+}
+
+
+.main-content-bg {
+    background: linear-gradient(135deg, #22222d, #909090, #8989c5);
+    background-size: 400% 400%;
+}
+
+.container-xl {
+    max-width: 1200px
+}
+
+.span1 {
+    background-color: #EA9639;
+    padding: 8px;
+    margin-top: 5px
+}
+
+.btn-contact {
+    background-color: #fff;
+    color: #000
+}
+
+.bg-dark {
+    background-color: #2D3A3A
+}
+
+.img-brdr img {
+    border: 3px solid #EA9639;
+    border-radius: 15px
+}
+
+.img-brdr {
+    border: 3px solid #EA9639;
+    border-radius: 15px
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px
+}
+
+.gallery-item .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 6px rgb(0 0 0 / .1)
+}
+
+.img-gallery {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease
+}
+
+.img-gallery:hover {
+    transform: scale(1.1) rotate(3deg);
+    filter: brightness(1.2) contrast(1.1)
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0% 50%
     }
 
-    :root {
-        --primary-color: #2D3A3A;
-            --secondary-color: #EA9639;
-            --transition-speed: 0.3s;
-            --thrd-color: #000;
-            --white-color:#fff;
-    }
-    
-    /* Ensure no horizontal overflow */
-    body {
-        overflow-x: hidden;
-       
-        
-       
-       
-        
+    50% {
+        background-position: 100% 50%
     }
 
-    #navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1030;
-        transition: top 0.3s ease-in-out;
-        background-color: white;
+    100% {
+        background-position: 0% 50%
     }
-    
-    .milestone-bg{
-        
-    }
+}
 
-    .main-content-bg{
-       background-color: #636768;
-    }
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgb(0 0 0 / .1);
+    transition: transform 0.3s
+}
 
-    /* Container width adjustments for responsiveness */
-    .container-xl {
-        max-width: 1200px;
-    }
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgb(0 0 0 / .15)
+}
 
-    .span1 {
-        background-color: #EA9639;
-        padding: 8px;
-        margin-top: 5px;
-    }
-
-    .btn-contact {
-        background-color: #fff;
-        color: black;
-    }
-
-    .bg-dark {
-        background-color: #2D3A3A;
-
-
-    }
-    .img-brdr img{
-       border: 3px solid #EA9639;
-       border-radius: 15px;
-
-    }
-    .img-brdr {
-        border: 3px solid #EA9639;
-        border-radius: 15px;
- 
-     }
-   .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .gallery-item .card {
-            position: relative;
-            overflow: hidden;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-       
-        .img-gallery {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-            /* border-radius: 18px; */
-            transition: all 0.5s ease;
-        }
-
-        .img-gallery:hover {
-            transform: scale(1.1) rotate(3deg);
-            filter: brightness(1.2) contrast(1.1);
-        }
-
-        @keyframes borderAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Additional styling for explore button */
-       
-   
-
-
-    .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background-color: #25D366;
-            color: #fff;
-            font-size: 24px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-       
-
-    .parallax {
-            background: url('img/booth5.jpg') no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-  
-            
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-          
-           
-
-          
-        }
-
-
-
-
+.parallax {
+    background: url(img/booth5.jpg) no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center
+}
 
 .service-card-wrapper {
     perspective: 1000px;
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
 .service-card {
@@ -179,7 +153,7 @@
     border: none;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    box-shadow: 0 15px 35px rgb(50 50 93 / .1), 0 5px 15px rgb(0 0 0 / .07)
 }
 
 .service-card::before {
@@ -189,14 +163,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg, 
-        rgba(74,108,247,0.1), 
-        rgba(106,90,205,0.1)
-    );
+    background: linear-gradient(135deg, rgb(74 108 247 / .1), rgb(106 90 205 / .1));
     opacity: 0;
     transition: opacity var(--transition-speed) ease;
-    z-index: 1;
+    z-index: 1
 }
 
 .service-card-inner {
@@ -208,41 +178,42 @@
     align-items: center;
     text-align: center;
     padding: 30px 20px;
-   background-color: white;
+    background-color: #fff
 }
 
 .service-card-front {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg)
 }
 
 .service-card-back {
     position: absolute;
     top: 0;
+    border: 1px solid white;
     left: 0;
     width: 100%;
     height: 100%;
     transform: rotateY(180deg);
     background: linear-gradient(135deg, var(--primary-color), var(--thrd-color));
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: all var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease
 }
 
 .service-card-wrapper:hover .service-card::before {
-    opacity: 1;
+    opacity: 1
 }
 
 .service-card-wrapper:hover .service-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg)
 }
 
 .service-card-wrapper:hover .service-card-back {
     opacity: 1;
-    transform: rotateY(0deg);
+    transform: rotateY(0deg)
 }
 
 .icon-wrapper {
@@ -255,73 +226,67 @@
     justify-content: center;
     margin-bottom: 20px;
     transition: all var(--transition-speed) ease;
-    box-shadow: 0 10px 25px rgba(74,108,247,0.3);
+    box-shadow: 0 10px 25px rgb(74 108 247 / .3)
 }
 
 .icon-wrapper .bi {
     font-size: 3rem;
-    color: white;
-    transition: transform var(--transition-speed) ease;
+    color: #fff;
+    transition: transform var(--transition-speed) ease
 }
 
 .service-card-wrapper:hover .icon-wrapper {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.1) rotate(10deg)
 }
 
 .service-card-title {
     font-weight: 700;
     margin-bottom: 15px;
     color: #333;
-    transition: color var(--transition-speed) ease;
+    transition: color var(--transition-speed) ease
 }
 
 .service-card-text {
     color: #6c757d;
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
 .btn-explore {
     background: linear-gradient(135deg, var(--secondary-color), var(--secondary-color));
     border: none;
-    color: white;
+    color: #fff;
     padding: 10px 25px;
     border-radius: 50px;
-    transition: all var(--transition-speed) ease;
-    /* box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3); */
+    transition: all var(--transition-speed) ease
 }
 
 .btn-explore:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(74,108,247,0.4);
+    box-shadow: 0 15px 35px rgb(74 108 247 / .4)
 }
 
 .service-card-back h6 {
-    color: white;
-    margin-bottom: 15px;
+    color: #fff;
+    margin-bottom: 15px
 }
 
 .service-card-back p {
     text-align: center;
     padding: 0 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .service-card-wrapper:hover .service-card-inner {
-        transform: none;
+        transform: none
     }
 }
 
-
-
-
-
 .lightbox {
     display: block;
-    position: relative;
+    position: relative
 }
 
-/* Lightbox overlay */
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -329,8 +294,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    background: rgb(0 0 0 / .8);
+    z-index: 1000
 }
 
 .lightbox-overlay img {
@@ -341,53 +306,42 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
 }
 
 .lightbox-overlay.active {
-    display: block;
+    display: block
 }
 
-/* Close button */
 .lightbox-overlay .close {
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 2rem;
     color: #fff;
-    cursor: pointer;
+    cursor: pointer
 }
-
-
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05)
 }
 
 .card {
-    position: relative;
+    position: relative
 }
-
-/* .card img {
-    display: block;
-    width: 320px;
-    height: 320px;
-    border-radius: 10px;
-
-} */
 
 .card-overlay {
     position: absolute;
@@ -395,49 +349,43 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgb(0 0 0 / .6);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    border-radius: 10px;
+    border-radius: 10px
 }
 
 .gallery-item:hover .card-overlay {
-    opacity: 1;
+    opacity: 1
 }
-
-
 
 .btn-dark {
     background-color: #000;
     color: #fff;
-    border: none;
+    border: none
 }
 
 .btn-dark:hover {
     background-color: #333;
-    color: #fff;
+    color: #fff
 }
-
-
 
 .hero-section {
     width: 100%;
     height: 450;
-    /*Full viewport height */
-    position: relative;
+    position: relative
 }
 
 .carousel-item {
     width: 100%;
     height: 450px;
-    /* Full viewport height */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
 }
 
 .carousel-overlay {
@@ -446,76 +394,65 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent overlay for readability */
+    background-color: rgb(0 0 0 / .5);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 }
 
 .span1 {
     background-color: #EA9639;
     padding: 8px;
     margin-top: 5px;
-    display: inline-block;
+    display: inline-block
 }
 
 .btn-contact {
     background-color: #fff;
-    color: black;
+    color: #000;
     padding: 10px 20px;
     font-size: 1.2rem;
     border: none;
     text-transform: uppercase;
-    transition: 0.3s ease;
+    transition: 0.3s ease
 }
 
 .btn-contact:hover {
     background-color: #EA9639;
-    color: white;
+    color: #fff
 }
-
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .section-title h5 {
     color: #EA9639;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .section-title h1 {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
+    font-weight: 700;
+    color: #fff
 }
 
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s
+}
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgb(0 0 0 / .3)
+}
 
+.card h5 {
+    color: #EA9639
+}
 
-    .card {
-        /* background: linear-gradient(145deg, #1e1e1e, #262626); */
-        /* Add creative gradient */
-        border-radius: 15px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .card h5 {
-        color: #EA9639;
-    }
-
-
-
-
-    .row .col-md-4 {
-        padding: 20px;
-    }
-    
+.row .col-md-4 {
+    padding: 20px
+}

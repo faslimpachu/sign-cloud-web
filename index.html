@@ -23,62 +23,1044 @@
     <!-- Favicon -->
     <link rel="icon" href="img/letter-s.png" type="image/png">
 
-   
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
-        .status-code {
-            font-size: 72px;
-            color: #e74c3c;
-            margin-bottom: 20px;
-        }
-        .message {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .contact {
-            color: #7f8c8d;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body style=" padding-top: 70px;">
 
+    <!-- Code -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-default px-0 py-3" id="navbar">
+        <div class="container-xl max-w-screen-xl">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Logo_Sign cloud.webp" loading="lazy"  alt="SignCloud logo" style="height:60px; width: 120px;">
+            </a>
+            <!-- Navbar toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Nav -->
+                <ul class="navbar-nav mx-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="Gallery.html">Gallery</a>
+                    </li>
+                </ul>
+                <!-- Right navigation -->
+                <!-- Action -->
+                <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+                    <a href="#contact" class="btn btn-sm btn-dark w-full w-lg-auto">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
     
 
-    <div class="container">
-        <div class="status-code">503</div>
-        <div class="message">
-            <h1>Service Temporarily Unavailable</h1>
-            <p>This website is currently suspended due to outstanding payment for hosting services.</p>
-            <p>Please contact the website administrator to resolve the payment issue and restore service.</p>
+
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('img/carousal1.webp');" loading="lazy">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7 pt-10">Grow Your <span class="d-inline-block py-1 span1">Brand With Us</span></h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">At SignCloud, we bring ideas to life with expert branding, exhibition booths, and printing services. Let's create something great!</p>
+                                    <div class="btno">
+                                        <a href="#service" class="btn btn-contact btn-lg my-2 mx-sm-2">Explore Our Services</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('img/carousal2.webp'); " loading="lazy">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7">
+                                        Turn Ideas <span class="d-inline-block py-1 span1">Into Reality</span>
+                                    </h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">
+                                        At SignCloud, we specialize in delivering impactful solutions, from booth making
+                                        to custom printing and branding.
+                                    </p>
+                                    <a href="#service" class="btn btn-contact btn-lg my-2 mx-sm-2">
+                                        Get Started Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item"
+                    style="background-image: url('img/Acrylic\ Cutting\ and\ Box\ Production.webp');" loading="lazy">
+                    <div class="carousel-overlay">
+                        <div class="container-xl max-w-screen-xl">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-10 col-xl-8 text-md-center">
+                                    <h1 class="ls-tight font-bolder display-3 text-white mb-7">
+                                        Boost Your <span class="d-inline-block py-1 span1">Business </span>
+                                    </h1>
+                                    <p class="lead text-white text-opacity-80 mb-10">
+                                        From stunning visuals to seamless branding solutions, SignCloud ensures your
+                                        business stands out.
+                                        Let's craft a future where your brand speaks volumes.
+                                    </p>
+                                    <a href="#contact" class="btn btn-contact btn-lg my-2 mx-sm-2">
+                                        Contact Us Today
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
         </div>
-       
+    </section>
+
     </div>
+
+
+    <div class="main-content-bg " style="background-color: #636768;">
+        <div class="pt-24 pb-24 milestone-bg ">
+            <div class="container max-w-screen-xl">
+                <!-- Section title 1 -->
+                <div class="row justify-content-center text-center mb-20">
+                    <div class="col-lg-7" data-aos="fade-up">
+                        <!-- Surtitle -->
+                        <h5 class="h5 mb-5 text-uppercase " style="color: #EA9639;">
+                            Milestones
+                        </h5>
+                        <!-- Heading -->
+                        <h1 class="ls-tight font-bolder text-white mb-5">
+                            Just a Few Highlights
+                        </h1>
+                        <!-- Text -->
+                        <p class="lead  text-white ">
+                            Bringing brands to life through innovative advertising solutions
+                            and exceptional craftsmanship that leave a lasting impression.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Sticky WhatsApp Icon -->
+                <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service.
+     " target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <!-- Milestones -->
+                <div class="row">
+                    <div class="col-lg-3 col-6 mb-5 mb-lg-0 text-center" data-aos="zoom-in">
+                        <!-- Icon -->
+                        <div class="icon icon-shape icon-lg text-xl  text-white rounded-circle shadow-primary mb-4"
+                            style="background-color: #2D3A3A;">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="h1  mb-2" style="color: #EA9639;">
+                            <span>55+</span>
+                            <span class="font-weight-normal"></span>
+                        </div>
+                        <!-- Milstone label -->
+                        <span class="d-block h6 text-capitalize text-white ">Successful Booths Created</span>
+                    </div>
+                    <div class="col-lg-3 col-6 mb-5 mb-lg-0 text-center" data-aos="zoom-in">
+                        <!-- Icon -->
+                        <div class="icon icon-shape icon-lg text-xl  text-white rounded-circle shadow-primary mb-4"
+                            style="background-color: #2D3A3A;">
+                            <i class="bi bi-chat-square-dots"></i>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="h1  mb-2" style="color: #EA9639;">
+                            <span>24</span>
+                            <span class="font-weight-normal">x7</span>
+                        </div>
+                        <!-- Milstone label -->
+                        <span class="d-block h6 text-capitalize text-white ">Dedicated Customer Support</span>
+                    </div>
+                    <div class="col-lg-3 col-6 mb-5 mb-lg-0 text-center" data-aos="zoom-in">
+                        <!-- Icon -->
+                        <div class="icon icon-shape icon-lg text-xl text-white rounded-circle shadow-primary mb-4"
+                            style="background-color: #2D3A3A;">
+                            <i class="bi bi-printer"></i>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="h1  mb-2" style="color: #EA9639;">
+                            <span>1000</span>
+                            <span class="font-weight-normal">+</span>
+                        </div>
+                        <!-- Milstone label -->
+                        <span class="d-block h6 text-capitalize text-white ">High-Quality Prints Delivered</span>
+                    </div>
+                    <div class="col-lg-3 col-6 mb-5 mb-lg-0 text-center" data-aos="zoom-in">
+                        <!-- Icon -->
+                        <div class="icon icon-shape icon-lg text-xl text-white rounded-circle shadow-primary mb-4"
+                            style="background-color: #2D3A3A;">
+                            <i class="bi bi-layout-sidebar-inset"></i>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="h1  mb-2" style="color: #EA9639;">
+                            <span>1000</span>
+                            <span class="font-weight-normal">+</span>
+                        </div>
+                        <!-- Milstone label -->
+                        <span class="d-block h6 text-capitalize text-white ">Custom Acrylic & Wood Projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About  -->
+        <section class="py-3 py-md-5 mt-16 mb-10 about-section " id="about">
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <img class="img-fluid rounded " data-aos="zoom-in" loading="lazy" width="1200" height="800" src="img/about.webp"
+                            alt="SignCloud about image">
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7 " data-aos="slide-up">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <h5 class="h5 mb-5 text-uppercase mt-10 " style="color: #EA9639;">
+                                    About Us
+                                </h5>
+                                <h2 class="mb-3 text-white">Who We Are</h2>
+                                <p class="text-lg mb-3 text-white">At Sign Cloud, we are more than just a signage
+                                    company –
+                                    we are your creative partners. Specializing in exhibition booths, custom
+                                    fabrication,
+                                    and high-quality printing, we work closely with each client to deliver tailored
+                                    solutions
+                                    that meet their unique needs. With years of experience in the industry, we combine
+                                    technical
+                                    expertise, creativity, and top-tier materials to create visually striking,
+                                    functional products that leave a lasting impression.
+                                    Whether it’s a trade show, retail branding, or corporate event, we are here to make
+                                    your brand shine.
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+        <div class=" pb-24  pt-10 service-section" id="service">
+            <div class="container max-w-screen-xl">
+                <div class="container p-0 ">
+                    <div class="row align-items-center mb-5">
+                        <!-- Left Side Text -->
+                        <div class="col-lg-6 col-md-6" data-aos="zoom-in-up">
+                            <!-- Surtitle -->
+                            <h5 class="h5 mb-4 text-uppercase " style="color: #EA9639;">
+                                Our Service
+                            </h5>
+                            <!-- Title -->
+                            <h1 class="ls-tight font-bolder mb-4 text-white">
+                                What We Specialize In
+                            </h1>
+                            <!-- Text -->
+                            <p class="lead text mb-10 text-white">
+                                At Sign Cloud, we take pride in offering a wide range of specialized services to meet
+                                all of your branding and signage needs. Our team of experts combines cutting-edge
+                                technology with
+                                years of experience to deliver high-quality, custom solutions that will help your brand
+                                stand out.
+                            </p>
+                        </div>
+                        <!-- Right Side Image -->
+                        <div class="col-lg-6 col-md-6 text-center mb-10" data-aos="fade-up">
+                            <img src="img/final-booth.webp" loading="lazy" width="1200" height="800" alt="Advertising Solutions" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <!-- Exhibition Booth Making and Branding -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper">
+                            <div class="service-card" data-aos="zoom-in-down">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <h5 class="service-card-title">Exhibition Booth Making</h5>
+                                    <p class="service-card-text">
+                                        Custom-designed booths and branding solutions to elevate your exhibition
+                                        presence.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Comprehensive Branding</h6>
+                                    <p>
+                                        Transform your exhibition space with innovative design and strategic branding
+                                        that captures attention and drives engagement.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CNC Router and Laser Work -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper " data-aos="zoom-in-up">
+                            <div class="service-card">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-slash-circle"></i>
+                                    </div>
+                                    <h5 class="service-card-title">CNC Router and Laser Work</h5>
+                                    <p class="service-card-text">
+                                        High-precision cutting and fabrication for wood, metal, and advanced materials.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Precision Manufacturing</h6>
+                                    <p>
+                                        Advanced CNC and laser technologies enabling intricate designs and perfect cuts
+                                        across diverse materials.
+                                    </p>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acrylic Cutting and Box Production -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper">
+                            <div class="service-card " data-aos="zoom-in-up">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-box"></i>
+                                    </div>
+                                    <h5 class="service-card-title">Acrylic Cutting & Boxes</h5>
+                                    <p class="service-card-text">
+                                        Professional acrylic cutting and custom box production for unique design
+                                        solutions.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Custom Design Solutions</h6>
+                                    <p>
+                                        Tailored acrylic and box solutions that meet your specific design and functional
+                                        requirements.
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DTF and UV Flatbed Printing -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper">
+                            <div class="service-card" data-aos="zoom-in-up">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-printer"></i>
+                                    </div>
+                                    <h5 class="service-card-title">DTF & UV Printing</h5>
+                                    <p class="service-card-text">
+                                        High-quality Direct-to-Film and UV flatbed printing for exceptional material
+                                        reproduction.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Print Innovation</h6>
+                                    <p>
+                                        State-of-the-art printing technologies delivering vibrant, durable prints on
+                                        multiple surfaces.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Large Format Printing -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper">
+                            <div class="service-card" data-aos="zoom-in-up">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-printer-fill"></i>
+                                    </div>
+                                    <h5 class="service-card-title">Large Format Printing</h5>
+                                    <p class="service-card-text">
+                                        Expansive printing solutions for posters, banners, and signage with exceptional
+                                        clarity.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Visual Impact</h6>
+                                    <p>
+                                        Impressive large-scale printing that brings your visual concepts to life with
+                                        stunning detail and vibrancy.
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticker Branding -->
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="service-card-wrapper">
+                            <div class="service-card" data-aos="zoom-in-up">
+                                <div class="service-card-inner service-card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-stickies"></i>
+                                    </div>
+                                    <h5 class="service-card-title">Sticker Branding</h5>
+                                    <p class="service-card-text">
+                                        Custom stickers and decals for dynamic product branding and promotional
+                                        strategies.
+                                    </p>
+                                </div>
+                                <div class="service-card-inner service-card-back">
+                                    <h6>Brand Identity</h6>
+                                    <p>
+                                        Innovative sticker and decal designs that enhance your brand's visual
+                                        communication and market presence.
+                                    </p>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="pt-24 pb-24" data-aos="zoom-in-up">
+            <div class="container max-w-screen-xl">
+                <div class="row justify-content-center mb-10">
+                    <div class="col-12 col-md-10 col-lg-6 text-center">
+                        <!-- Heading -->
+                        <h1 class="ls-tight font-bolder h3 lh-tight text-white" data-aos="fade-in">
+                            EXPLORE OUR SERVICES
+                        </h1>
+
+                    </div>
+                </div>
+
+                <!-- Service 1: Exhibition Booth Making and Branding -->
+                <div class="section-step-lg  " id="exc">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded shadow-4 bg-surface-primary border p-2 me-lg-5 position-relative">
+                                <img alt="Exhibition Booth" src="img/booth5.webp" loading="lazy" width="1200" height="800"
+                                    class="img-fluid rounded image-service">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 1</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">Exhibition Booth Making and Branding</h1>
+                            <p class="lead text text-white">
+                                We design and build custom exhibition booths that are both functional and visually
+                                striking,
+                                ensuring your brand makes a
+                                strong impact at every event. From concept to execution, we handle every detail to help
+                                you
+                                create a memorable presence.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0  text-white">Tailored to your brand
+                                                identity</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">High-quality materials and
+                                                design</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Enhances brand
+                                                visibility</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: CNC Router and Laser Work -->
+                <div class="section-step-lg" data-aos="zoom-in-up" id="s2">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded shadow-4 bg-surface-primary border p-2 me-lg-5 position-relative">
+                                <img alt="CNC Router" src="img/cnc.webp" loading="lazy" width="1200" height="800" class="img-fluid rounded image-service">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 2</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">CNC Router and Laser Work</h1>
+                            <p class="lead text text-white">
+                                Our advanced CNC router and laser cutting services allow us to craft intricate, precise
+                                designs in a variety
+                                of materials. Whether it's for custom signage, displays, or décor, we offer clean,
+                                sharp,
+                                and professional results.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Precision cutting for various
+                                                materials</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Custom designs tailored to
+                                                your needs</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Fast turnaround time</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Acrylic Cutting and Box Production -->
+                <div class="section-step-lg" data-aos="zoom-in-up" id="s3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded shadow-4 bg-surface-primary border p-2 me-lg-5 position-relative">
+                                <img src="img/Acrylic%20Cutting%20and%20Box%20Production.webp" loading="lazy" width="1200" height="800" alt="Acrylic Cutting">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">Acrylic Cutting and Box Production</h1>
+                            <p class="lead text text-white">
+                                We provide custom acrylic cutting and box production services that bring your creative
+                                ideas
+                                to life. From retail displays
+                                to packaging, our acrylic solutions are durable, stylish, and tailored to your
+                                specifications.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Accurate and precise acrylic
+                                                cutting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Custom boxes for a wide range
+                                                of uses</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Durable and high-quality
+                                                materials</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Service 4: Acrylic Cutting and Box Production -->
+                <div class="section-step-lg" data-aos="zoom-in-up" id="s4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded  position-relative">
+                                <img src="img/DTF & UV Flatbed Printing.webp" loading="lazy" width="1200" height="800" alt="DTF & UV Flatbed Printing"
+                                    class="img-fluid rounded shadow-4 bg-surface-primary border p-2 me-lg-5 image-service">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">DTF & UV Flatbed Printing</h1>
+                            <p class="lead text text-white">
+                                Our Direct-to-Film (DTF) and UV flatbed printing services allow us to print vibrant,
+                                high-quality designs directly onto a variety of surfaces. Whether for
+                                promotional items, signage, or custom merchandise, we ensure your designs look sharp and
+                                professional.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Long-lasting print
+                                                quality</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Suitable for various
+                                                materials</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Vibrant color accuracy</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Service 5: Acrylic Cutting and Box Production -->
+                <div class="section-step-lg" data-aos="zoom-in-up" id="s5">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded  position-relative">
+                                <img src="img/larg print.webp" loading="lazy" width="1200" height="800" alt="Large Format Printing"
+                                    class="img-fluid rounded shadow-4 bg-surface-primary border p-2 me-lg-5 image-service">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">Large Format Printing</h1>
+                            <p class="lead text text-white">
+                                When you need high-impact visuals, our large format printing services have got you
+                                covered.
+                                From banners and posters to trade show
+                                graphics and wall wraps, we produce stunning prints that grab attention and communicate
+                                your
+                                message clearly.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">High-resolution
+                                                quality</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Ideal for indoor & outdoor
+                                                displays</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Durable &
+                                                fade-resistant</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Service 6:  -->
+                <div class="section-step-lg" data-aos="zoom-in-up" id="s6">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 mb-10">
+                            <div class="rounded  position-relative">
+                                <img src="img/Sticker Branding.webp" loading="lazy" width="1200" height="800" alt="Sticker Branding"
+                                    class="img-fluid rounded shadow-4 bg-surface-primary border p-2 me-lg-5 image-service">
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-7 mb-lg-0">
+                            <!-- <h5 class="h5 mb-5 text-uppercase text-primary">Step 3</h5> -->
+                            <h1 class="ls-tight font-bolder mb-5 text-white">Sticker Branding</h1>
+                            <p class="lead text text-white">
+                                Our custom sticker branding services provide a versatile and cost-effective way to
+                                promote
+                                your business. Whether it's for product packaging,
+                                vehicle decals, or promotional giveaways, our stickers are designed to last and make a
+                                statement.
+                            </p>
+                            <ul class="list-unstyled mt-4 mb-0">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Waterproof &
+                                                weather-resistant</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">Perfect for indoor and
+                                                outdoor use</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div
+                                                class="icon icon-xs icon-shape bg-success text-white text-base rounded-circle me-3">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 font-semibold mb-0 text-white">High-quality adhesive</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 mt-16">
+        <h1 class="ls-tight font-bolder mb-5 text-center">Our Gallery</h1>
+        
+        <div class="gallery-grid">
+            <!-- Image Cards -->
+            <div class="gallery-item">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <a href="img/referance images/6.webp"  loading="lazy" class="lightbox bordr-img">
+                        <img src="img/referance images/6.webp" width="100%" height="200px"  loading="lazy" class="card-img-top img-fluid img-gallery img-brdr" alt="Image 1">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <a href="img/referance images/new/7.webp" loading="lazy" class="lightbox bordr-img">
+                        <img src="img/referance images/new/7.webp"  width="100%" height="200px"  loading="lazy" class="card-img-top img-fluid img-gallery img-brdr" alt="Image 2">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <a href="img/referance images/new/18.webp" loading="lazy" class="lightbox bordr-img">
+                        <img src="img/referance images/new/18.webp"  width="100%" height="200px"  loading="lazy" class="card-img-top img-fluid img-gallery img-brdr" alt="Image 3">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="card border-0 shadow-sm overflow-hidden">
+                    <a href="img/referance images/new/2.webp" loading="lazy" class="lightbox bordr-img">
+                        <img src="img/referance images/new/2.webp"  width="100%" height="200px"  loading="lazy" class="card-img-top img-fluid img-gallery img-brdr" alt="Image 4">
+                    </a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Explore More Button -->
+    <div class="text-center mt-10 mb-16">
+        <a href="Gallery.html" class="btn btn-dark w-45">Explore More</a>
+    </div>
+
+
+    <div class="container my-5" id="contact" data-aos="zoom-in-up">
+        <h2 class="text-center mb-4 mb-10 mt-16">Contact Us</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <form id="contact-form" action="mailto:info@signcloudsa.com" method="POST" enctype="text/plain">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number with country code" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6 mt-10">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.074690191081!2d46.75111931554346!3d24.617354884174434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f09ca65b36c21%3A0xc55a9aae9c2fd134!2sSign%20Cloud!5e0!3m2!1sen!2ssa!4v1700149177994!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <hr class="mt-16 mb-16 border-black " />
+    <footer class="pt-10 bg-surface-white border-footer">
+        <div class="container max-w-screen-xl">
+            <!-- Call to action -->
+
+
+            <div class="row">
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <!-- Brand -->
+                    <img src="img/Logo_Sign cloud_Letter.webp" loading="lazy" width="250px" height="250px" alt="logo">
+                    <!-- Text -->
+                    <p class="text-sm text-dark opacity-8 mt-5 mb-5">
+                        A complete advertising and printing solution for your business. <br><br>
+                        Tel. +966 531576543 <br>
+                        Al Abha Street, Riyadh, KSA
+                    </p>
+
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-6 ms-lg-auto mb-4 mb-sm-0">
+
+                    <ul class="list-unstyled text-sm ">
+                        <li class="py-1"><a href="index.html" class="text-dark ">Home</a></li>
+                        <li class="py-1"><a href="#about" class="text-dark ">About</a></li>
+                        <li class="py-1"><a href="#contact" class="text-dark ">Contact</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-6 mb-4 mb-sm-0">
+
+                    <ul class="list-unstyled text-sm">
+                        <li class="py-1"><a href="#service" class="text-dark">Services</a></li>
+                        <li class="py-1"><a href="Gallery.html" class="text-dark ">Gallery</a></li>
+                        <li class="py-1"><a href="#FAQ" class="text-dark">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-6 mb-4 mb-sm-0">
+
+
+                </div>
+
+            </div>
+            <hr class="mt-16 mb-7 border-dark" />
+            <div class="row align-items-center justify-content-md-between pb-7">
+                <div class="col-md-6">
+                    <div class="copyright text-sm text-center text-md-start text-dark">
+                        &copy; 2025 <a href="#" class="h6 text-dark text-sm font-bold">SignCloud</a>. All rights
+                        reserved.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0 mx-n3">
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
     <script type="application/ld+json">
         {
 

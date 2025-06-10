@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignCloud/Gallery</title>
 
- <!-- SEO Meta Tags -->
- <meta name="description" content="SignCloud provides innovative advertising solutions, including exhibition booth design, CNC woodwork, acrylic cutting, and high-quality printing. Elevate your brand today!">
- <meta name="keywords" content="SignCloud,sign cloud, sign cloud ksa, digital agency in KSA, advertising solutions, exhibition booths, CNC woodwork, acrylic cutting, printing, branding, large format printing, sticker branding">
- <meta name="author" content="SignCloud">
- <meta name="robots" content="index, follow">
- <meta name="og:title" content="SignCloud | Innovative Advertising Solutions">
- <meta name="og:description" content="SignCloud specializes in custom advertising services to make your brand stand out. Explore our creative solutions today!">
- <meta name="og:image" content="img/Logo_Sign cloud.png">
- <meta name="og:type" content="website">
- <meta name="og:url" content="https://singcloudsa.com/">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SignCloud provides innovative advertising solutions, including exhibition booth design, CNC woodwork, acrylic cutting, and high-quality printing. Elevate your brand today!">
+    <meta name="keywords" content="SignCloud,sign cloud, sign cloud ksa, digital agency in KSA, advertising solutions, exhibition booths, CNC woodwork, acrylic cutting, printing, branding, large format printing, sticker branding">
+    <meta name="author" content="SignCloud">
+    <meta name="robots" content="index, follow">
+    <meta name="og:title" content="SignCloud | Innovative Advertising Solutions">
+    <meta name="og:description" content="SignCloud specializes in custom advertising services to make your brand stand out. Explore our creative solutions today!">
+    <meta name="og:image" content="img/Logo_Sign cloud.png">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="https://singcloudsa.com/">
 
- <!-- Favicon -->
- <link rel="icon" href="img/letter-s.png" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="img/letter-s.png" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -26,23 +27,500 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <style>
+     :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #213448 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .parallax {
+            height: 300px;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.8), rgba(155, 89, 182, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff" points="0,300 0,0 1000,50 1000,300"/></svg>');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .filter-tabs {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--dark-gray);
+            cursor: pointer;
+            white-space: nowrap;
+            min-width: fit-content;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover {
+            background: linear-gradient(45deg, #fde2c3, #fad7b0);
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(45deg, #fde2c3, #fad7b0);
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #e9ad68, rgba(104, 97, 111, 0.8));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #e9ad68;
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10000;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-section .row {
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .contact-section .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section form {
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section .ratio {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.25rem;
+            }
+            
+            .filter-tabs {
+                padding: 0.75rem;
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.65rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .gallery-header {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-container {
+                padding: 1.5rem;
+            }
+            
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 1rem;
+            }
+            
+            .filter-tabs {
+                padding: 0.5rem;
+                gap: 0.4rem;
+                border-radius: 20px;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                border-radius: 20px;
+            }
+            
+            .gallery-header {
+                padding: 1.25rem;
+                border-radius: 15px;
+            }
+            
+            .gallery-header h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .gallery-header p {
+                font-size: 1rem;
+            }
+            
+            .gallery-container {
+                padding: 1.25rem;
+                border-radius: 20px;
+            }
+            
+            .contact-section {
+                padding: 1.5rem 1rem;
+                border-radius: 20px;
+            }
+            
+            .contact-section h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .whatsapp-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 0.75rem;
+            }
+            
+            .filter-tabs {
+                padding: 0.4rem;
+                gap: 0.3rem;
+                margin: 1.5rem 0;
+            }
+            
+            .filter-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                min-width: auto;
+            }
+            
+            .gallery-header {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .gallery-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .gallery-header p {
+                font-size: 0.9rem;
+            }
+            
+            .gallery-container {
+                padding: 1rem;
+            }
+            
+            .contact-section {
+                padding: 1.25rem 0.75rem;
+                margin: 2rem 0;
+            }
+            
+            .contact-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .category-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 85%;
+            }
+            
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.35rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            
+            .gallery-header h1 {
+                font-size: 1.25rem;
+            }
+            
+            .contact-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Landscape orientation adjustments for mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .gallery-header {
+                padding: 1rem;
+            }
+            
+            .gallery-header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .contact-section {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 365px) {
+             /* .ftr-logo{
+                height: 35px;
+             } */
+        }
+    </style>
 </head>
 
-
-
 <body>
-
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-default px-0 py-3">
         <div class="container-xl max-w-screen-xl">
             <!-- Logo -->
             <a class="navbar-brand" href="index.html">
-                <img src="img/Logo_Sign cloud.png" class="h-8" alt=" SignCloud logo">
+                <img src="img/Logo_Sign cloud.png" class="h-8" alt=" SignCloud logo" style="height: 60px;">
             </a>
             <!-- Navbar toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -67,10 +545,9 @@
                     </li>
                 </ul>
                 <!-- Right navigation -->
-
                 <!-- Action -->
                 <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-                    <a href="index.html#contact" class="btn btn-sm btn-dark w-full w-lg-auto">
+                    <a href="index.html#contact" class="btn btn-sm btn-dark rounded py-2 px-4 w-full w-lg-auto">
                         Contact Us
                     </a>
                 </div>
@@ -78,536 +555,132 @@
         </div>
     </nav>
 
-
-
     <!-- Parallax Section -->
-    <div class="parallax" data-aos="zoom-in">
+    <!-- <div class="parallax" data-aos="zoom-in"></div> -->
 
-    </div>
+    <div class="container">
+        <div class="gallery-header" data-aos="zoom-out">
+            <h1 class="mb-4">See Our Work in Action</h1>
+            <p class="mb-0" style="color: #666; font-size: 1.1rem;">
+                Discover the creativity and precision behind every project we undertake. From eye-catching exhibition booths
+                to detailed CNC woodwork, vibrant prints, and custom acrylic designs, our portfolio showcases the diversity
+                and quality of our services.
+            </p>
+        </div>
 
+        <!-- Category Filter -->
+        <div class="filter-tabs" data-aos="fade-up">
+            <button class="filter-btn active" data-category="all">All Projects</button>
+            <button class="filter-btn" data-category="expo-booths">Expo Booths</button>
+            <button class="filter-btn" data-category="events-branding">Events Branding</button>
+            <button class="filter-btn" data-category="printing">Printing</button>
+            <button class="filter-btn" data-category="cutouts">Cutouts</button>
+            <button class="filter-btn" data-category="gift-items">Gift Items</button>
+            <button class="filter-btn" data-category="custom-made">Custom Made</button>
+        </div>
 
-    <div class="container text-center" data-aos="zoom-out">
-        <!-- <h2 class="text-center mb-10">Our Gallery</h2> -->
-        <h1 class="mb-5 mt-10">See Our Work in Action</h1>
-        <p class="mb-16" style="color: black;">
-            Discover the creativity and precision behind every project we undertake. From eye-catching exhibition booths
-            to detailed CNC woodwork, vibrant prints, and custom acrylic designs, our portfolio showcases the diversity
-            and quality of our services.
-        </p>
-
+        <!-- Gallery Grid -->
+        <div class="gallery-container" data-aos="fade-up">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be dynamically populated -->
+            </div>
+        </div>
     </div>
 
     <!-- Sticky WhatsApp Icon -->
-    <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service.
- " target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/+966531576543?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20service." target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <div class="container my-5" data-aos="zoom-in">
-
-        <div class="row g-4">
-            <!-- Repeat this column structure for each image -->
-            <!-- Use a loop or server-side logic to dynamically generate this -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/6.webp" class="lightbox ">
-                            <img src="img/referance images/6.webp" class="card-img-top img-fluid img-gallery "
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/1.webp" class="lightbox">
-                            <img src="img/referance images/new/1.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/2.webp" class="lightbox">
-                            <img src="img/referance images/new/2.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/5.webp" class="lightbox">
-                            <img src="img/referance images/new/5.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/6.webp" class="lightbox">
-                            <img src="img/referance images/new/6.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/7.webp" class="lightbox">
-                            <img src="img/referance images/new/7.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/10.webp" class="lightbox">
-                            <img src="img/referance images/new/10.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/17.webp" class="lightbox">
-                            <img src="img/referance images/new/17.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/16.webp" class="lightbox">
-                            <img src="img/referance images/new/16.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/12.webp" class="lightbox">
-                            <img src="img/referance images/new/12.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/18.webp" class="lightbox">
-                            <img src="img/referance images/new/18.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/13 (1).webp" class="lightbox">
-                            <img src="img/referance images/new/13 (1).webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/10.1.webp" class="lightbox">
-                            <img src="img/referance images/new/10.1.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/3.webp" class="lightbox">
-                            <img src="img/referance images/new/3.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/4.webp" class="lightbox">
-                            <img src="img/referance images/new/4.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/8.webp" class="lightbox">
-                            <img src="img/referance images/new/8.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/9.webp" class="lightbox">
-                            <img src="img/referance images/new/9.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/11.webp" class="lightbox">
-                            <img src="img/referance images/new/11.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/14.webp" class="lightbox">
-                            <img src="img/referance images/new/14.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/new/15.webp" class="lightbox">
-                            <img src="img/referance images/new/15.webp" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/8.jpg" class="lightbox">
-                            <img src="img/referance images/8.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/10.jpg" class="lightbox">
-                            <img src="img/referance images/10.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/11.jpg" class="lightbox">
-                            <img src="img/referance images/11.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/12.jpg" class="lightbox">
-                            <img src="img/referance images/12.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/13.jpg" class="lightbox">
-                            <img src="img/referance images/13.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/14.jpg" class="lightbox">
-                            <img src="img/referance images/14.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-           
-            
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/17.jpg" class="lightbox">
-                            <img src="img/referance images/17.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/18.jpg" class="lightbox">
-                            <img src="img/referance images/18.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/19.jpg" class="lightbox">
-                            <img src="img/referance images/19.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/20.jpg" class="lightbox">
-                            <img src="img/referance images/20.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/21.jpg" class="lightbox">
-                            <img src="img/referance images/21.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/22.jpg" class="lightbox">
-                            <img src="img/referance images/22.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/23.jpg" class="lightbox">
-                            <img src="img/referance images/23.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/24.jpg" class="lightbox">
-                            <img src="img/referance images/24.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/26.jpg" class="lightbox">
-                            <img src="img/referance images/26.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <div class="card img-brdr">
-                        <a href="img/referance images/27.jpg" class="lightbox">
-                            <img src="img/referance images/27.jpg" class="card-img-top img-fluid img-gallery"
-                                alt="Image 1">
-                        </a>
-                    </div>
-                </div>
-            </div>
-           
-
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImage" src="" alt="">
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-    <div class="container my-5" id="contact" data-aos="zoom-in-up">
-        <h2 class="text-center mb-4 mb-10 mt-16">Contact Us</h2>
-        <div class="row g-4">
-            <!-- Contact Form -->
-            <div class="col-md-6">
-                <form id="contact-form" action="mailto:info@singcloudsa.com" method="POST" enctype="text/plain">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
-                            required>
+    <!-- Contact Section -->
+    <div class="container">
+        <div class="contact-section" id="contact" data-aos="zoom-in-up">
+            <h2>Contact Us</h2>
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-md-6">
+                    <form id="contact-form" action="mailto:info@singcloudsa.com" method="POST" enctype="text/plain">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number with country code " required>
+                        </div>
+                        <div class="mb-3 flex-grow-1">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control flex-grow-1" id="message" name="message" rows="5" placeholder="Write your message here..." required style="resize: vertical; min-height: 120px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 mt-auto">Send Message</button>
+                    </form>
+                </div>
+                <!-- Google Map -->
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.074690191081!2d46.75111931554346!3d24.617354884174434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f09ca65b36c21%3A0xc55a9aae9c2fd134!2sSign%20Cloud!5e0!3m2!1sen!2ssa!4v1700149177994!5m2!1sen!2ssa"
+                            style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
-                            required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone"
-                            placeholder="Enter your phone number with country code " required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Your Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5"
-                            placeholder="Write your message here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-dark w-100">Send Message</button>
-                </form>
-            </div>
-            <!-- Google Map -->
-            <div class="col-md-6 mt-10">
-                <div class="ratio ratio-16x9">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.074690191081!2d46.75111931554346!3d24.617354884174434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f09ca65b36c21%3A0xc55a9aae9c2fd134!2sSign%20Cloud!5e0!3m2!1sen!2ssa!4v1700149177994!5m2!1sen!2ssa"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-    <hr class="mt-16 mb-16 border-black " />
-    <footer class="pt-10 bg-surface-white border-footer" >
+    <hr class="mt-5 mb-4 border-dark" style="opacity: 0.1;" />
+    <footer class="pt-4">
         <div class="container max-w-screen-xl">
-            <!-- Call to action -->
-
-
             <div class="row">
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     <!-- Brand -->
-                    <img src="img/Logo_Sign cloud_Letter.png" class="h-10" alt="...">
+                    <img src="img/Logo_Sign cloud_Letter.png" class="h-10 ftr-logo" alt="..." style="height: 40px;">
                     <!-- Text -->
-                    <p class="text-sm text-dark opacity-8 mt-5 mb-5">
+                    <p class="text-sm text-dark opacity-8 mt-3 mb-4">
                         A complete advertising and printing solution for your business. <br><br>
                         Tel. +966 531576543 <br>
                         Al Abha Street, Riyadh, KSA
                     </p>
-
-                    </ul>
                 </div>
                 <div class="col-lg-2 col-sm-3 col-6 ms-lg-auto mb-4 mb-sm-0">
-
                     <ul class="list-unstyled text-sm ">
                         <li class="py-1"><a href="index.html" class="text-dark ">Home</a></li>
                         <li class="py-1"><a href="#about" class="text-dark ">About</a></li>
                         <li class="py-1"><a href="#contact" class="text-dark ">Contact</a></li>
-
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-3 col-6 mb-4 mb-sm-0">
-
                     <ul class="list-unstyled text-sm">
                         <li class="py-1"><a href="#service" class="text-dark">Services</a></li>
                         <li class="py-1"><a href="Gallery.html" class="text-dark ">Gallery</a></li>
                         <li class="py-1"><a href="#FAQ" class="text-dark">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-sm-3 col-6 mb-4 mb-sm-0">
-
-
-                </div>
-
             </div>
-            <hr class="mt-16 mb-7 border-dark" />
-            <div class="row align-items-center justify-content-md-between pb-7">
+            <hr class="mt-4 mb-3 border-dark" style="opacity: 0.1;" />
+            <div class="row align-items-center justify-content-md-between pb-4">
                 <div class="col-md-6">
                     <div class="copyright text-sm text-center text-md-start text-dark">
-                        &copy; 2024 <a href="#" class="h6 text-dark text-sm font-bold">SignCloud</a>. All rights
-                        reserved.
+                        &copy; 2025 <a href="#" class="h6 text-dark text-sm font-bold">SignCloud</a>. All rights reserved.
                     </div>
                 </div>
                 <div class="col-md-6">
                     <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0 mx-n3">
                         <li class="nav-item">
-
-                        </li>
-                        <li class="nav-item">
-
-                        </li>
-                        <li class="nav-item">
-                            <p>Developed by <a href="#">Zorvia Tech Solutions</a></p>
+                            <!-- <p class="mb-0">Developed by <a href="#">Zorvia Tech Solutions</a></p> -->
                         </li>
                     </ul>
                 </div>
@@ -615,11 +688,167 @@
         </div>
     </footer>
 
-    
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Gallery data with categories
+        const galleryItems = [
+            { src: "img/referance images/6.webp", category: "events-branding", title: "Exhibition Booth Design" },
+            { src: "img/referance images/new/1.webp", category: "expo-booths", title: "Event Branding" },
+            { src: "img/referance images/new/2.webp", category: "printing", title: "Large Format Printing" },
+            { src: "img/referance images/new/5.webp", category: "expo-booths", title: "Custom Cutouts" },
+            { src: "img/referance images/new/6.webp", category: "printing", title: "Corporate Gifts" },
+            { src: "img/referance images/new/7.webp", category: "custom-made", title: "Custom Solutions" },
+            { src: "img/referance images/new/10.webp", category: "cutouts", title: "Trade Show Booth" },
+            { src: "img/referance images/new/17.webp", category: "printing", title: "Event Setup" },
+            { src: "img/referance images/new/16.webp", category: "printing", title: "Banner Printing" },
+            // { src: "img/referance images/new/12.webp", category: "cutouts", title: "Acrylic Cutouts" },
+            { src: "img/referance images/new/18.webp", category: "cutouts", title: "Promotional Items" },
+            { src: "img/referance images/new/13 (1).webp", category: "custom-made", title: "Custom Fabrication" },
+            { src: "img/referance images/new/10.1.webp", category: "cutouts", title: "Exhibition Display" },
+            { src: "img/referance images/new/3.webp", category: "gift-items", title: "Brand Activation" },
+            { src: "img/referance images/new/4.webp", category: "printing", title: "Digital Printing" },
+            { src: "img/referance images/new/8.webp", category: "gift-items", title: "Laser Cutting" },
+            { src: "img/referance images/new/9.webp", category: "printing", title: "Custom Gifts" },
+            { src: "img/referance images/new/11.webp", category: "custom-made", title: "Bespoke Design" },
+            { src: "img/referance images/new/14.webp", category: "custom-made", title: "Show Display" },
+            { src: "img/referance images/new/15.webp", category: "printing", title: "Event Graphics" },
+            { src: "img/referance images/8.jpg", category: "printing", title: "Vinyl Printing" },
+            { src: "img/referance images/10.jpg", category: "printing", title: "CNC Cutting" },
+            { src: "img/referance images/11.jpg", category: "printing", title: "Award Items" },
+            { src: "img/referance images/12.jpg", category: "custom-made", title: "Custom Work" },
+            { src: "img/referance images/13.jpg", category: "printing", title: "Booth Construction" },
+            { src: "img/referance images/14.jpg", category: "printing", title: "Event Decor" },
+            { src: "img/referance images/17.jpg", category: "printing", title: "Sticker Printing" },
+            { src: "img/referance images/18.jpg", category: "cutouts", title: "Metal Cutting" },
+            { src: "img/referance images/19.jpg", category: "printing", title: "Corporate Items" },
+            { src: "img/referance images/20.jpg", category: "custom-made", title: "Special Projects" },
+            { src: "img/referance images/21.jpg", category: "expo-booths", title: "Fair Booth" },
+            { src: "img/referance images/22.jpg", category: "events-branding", title: "Brand Display" },
+            { src: "img/referance images/23.jpg", category: "printing", title: "Fabric Printing" },
+            { src: "img/referance images/24.jpg", category: "cutouts", title: "Wood Cutting" },
+            { src: "img/referance images/26.jpg", category: "gift-items", title: "Souvenir Items" },
+            { src: "img/referance images/27.jpg", category: "custom-made", title: "Tailored Solutions" },
+            { src: "img/new/1.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/2.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/3.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/4.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/5.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/6.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/7.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/8.jpeg", category: "events-branding", title: "custom-made" },
+            { src: "img/new/9.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/10.jpeg", category: "events-branding", title: "expo booth" },
+            { src: "img/new/11.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/12.jpeg", category: "events-branding", title: "expo booth" },
+            { src: "img/new/13.jpeg", category: "events-branding", title: "expo booth" },
+            { src: "img/new/14.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/15.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/16.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/17.jpeg", category: "cutouts", title: "custom-made" },
+            { src: "img/new/18.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/19.jpeg", category: "cutouts", title: "custom-made" },
+            { src: "img/new/20.jpeg", category: "cutouts", title: "expo booth" },
+            { src: "img/new/21.jpeg", category: "events-branding", title: "expo booth" },
+            { src: "img/new/22.jpeg", category: "events-branding", title: "expo booth" },
+            { src: "img/new/23.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/24.jpeg", category: "custom-made", title: "custom-made" },
+            { src: "img/new/25.jpeg", category: "expo-booths", title: "expo booth" },
+            { src: "img/new/26.jpeg", category: "expo-booths", title: "expo booth" },
+            
+
+
+            
+            
 
 
 
+
+
+        ];
+
+        // Category labels
+        const categoryLabels = {
+            'expo-booths': 'Expo Booths',
+            'events-branding': 'Events Branding',
+            'printing': 'Printing',
+            'cutouts': 'Cutouts',
+            'gift-items': 'Gift Items',
+            'custom-made': 'Custom Made'
+        };
+
+        // Render gallery items
+        function renderGallery(items) {
+            const galleryGrid = document.getElementById('galleryGrid');
+            galleryGrid.innerHTML = '';
+
+            items.forEach((item, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = `gallery-item ${item.category}`;
+                galleryItem.innerHTML = `
+                    <div class="category-badge">${categoryLabels[item.category]}</div>
+                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                `;
+                galleryItem.addEventListener('click', () => openLightbox(item.src, item.title));
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter items
+                const category = btn.dataset.category;
+                const filteredItems = category === 'all' ? galleryItems : galleryItems.filter(item => item.category === category);
+                renderGallery(filteredItems);
+            });
+        });
+
+        // Lightbox functionality
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = src;
+            lightboxImage.alt = title;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Initialize gallery
+        renderGallery(galleryItems);
+    </script>
 </body>
-<script src="script.js"></script>
 
 </html>

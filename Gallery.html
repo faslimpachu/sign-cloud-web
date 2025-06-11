@@ -570,7 +570,7 @@
 
         <!-- Category Filter -->
         <div class="filter-tabs" data-aos="fade-up">
-            <button class="filter-btn active" data-category="all">All Projects</button>
+            <!-- <button class="filter-btn active" data-category="all">All Projects</button> -->
             <button class="filter-btn" data-category="expo-booths">Expo Booths</button>
             <button class="filter-btn" data-category="events-branding">Events Branding</button>
             <button class="filter-btn" data-category="printing">Printing</button>
@@ -772,7 +772,7 @@
 
         ];
 
-        // Category labels
+          // Category labels
         const categoryLabels = {
             'expo-booths': 'Expo Booths',
             'events-branding': 'Events Branding',
@@ -809,9 +809,9 @@
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Filter items
+                // Filter items by category
                 const category = btn.dataset.category;
-                const filteredItems = category === 'all' ? galleryItems : galleryItems.filter(item => item.category === category);
+                const filteredItems = galleryItems.filter(item => item.category === category);
                 renderGallery(filteredItems);
             });
         });
@@ -832,22 +832,10 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close lightbox on background click
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox') {
-                closeLightbox();
-            }
-        });
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-
-        // Initialize gallery
-        renderGallery(galleryItems);
+        // Initialize gallery with first category (expo-booths)
+        const initialCategory = 'expo-booths';
+        const initialItems = galleryItems.filter(item => item.category === initialCategory);
+        renderGallery(initialItems);
     </script>
 </body>
 
